@@ -1,4 +1,4 @@
-<p align="center"><img src="https://imgur.com/mBlqBYa" width="400px" height="150px" alt="ddos"></p>
+<p align="center"><img src="https://www.linkpicture.com/q/12311_1.png" width="400px" height="150px" alt="ddos"></p>
 # (DoS) Attack Penetration Testing
  <p>
  <img src="https://img.shields.io/github/stars/HyukIsBack/HASOKI-DDoS?color=%23DF0067&style=for-the-badge"/> &nbsp;
@@ -18,7 +18,7 @@ original : https://github.com/HyukIsBack/KARMA-DDoS
 </div>
 
 ## Menu
-![hasoki](https://imgur.com/5qhQhGc)
+![hasoki](https://www.linkpicture.com/q/Untitled4_4.png)
 
 ## Methods
 
