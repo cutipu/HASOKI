@@ -15,7 +15,7 @@
 
  <img src="https://img.shields.io/badge/Python-FFDD00?style=for-the-badge&logo=python&logoColor=blue"/></br>
 </div>
-## Methods
+## SETUP
 install: python setup.py install or python3 setup.py install
 ## Menu
 ![hasoki](https://www.linkpicture.com/q/Untitled4_4.png)
