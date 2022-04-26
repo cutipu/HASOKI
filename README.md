@@ -7,8 +7,7 @@
  
 </p>
  DDoS Attack Panel includes CloudFlare Bypass (UAM, CAPTCHA, BFM, etc..)<br/><br/>
- Don't attack any websites gov you don't own it<br/>
- This was created for educational purposes<br/>
+ Don't attack any websites gov !<br/>
  All responsibilities and disadvantages of using this program is for the user.
  
 ## Language</br>
@@ -17,7 +16,7 @@
 </div>
 
 ## Menu
-![hasoki](https://www.linkpicture.com/q/Untitled4_4.png)
+![hasoki](https://www.linkpicture.com/q/Untitled1_15.png)
 
 ## Methods
 
