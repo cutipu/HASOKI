@@ -11,7 +11,6 @@
  This was created for educational purposes<br/>
  All responsibilities and disadvantages of using this program is for the user.
  
-original : https://github.com/HyukIsBack/KARMA-DDoS
 ## Language</br>
 
  <img src="https://img.shields.io/badge/Python-FFDD00?style=for-the-badge&logo=python&logoColor=blue"/></br>
@@ -52,8 +51,8 @@ original : https://github.com/HyukIsBack/KARMA-DDoS
  - Next Update Attack Menu And L4 Methods (SOON...)
 ```
 
-## Videos
-[![](https://user-images.githubusercontent.com/87601386/161339371-b6dfaa8f-1cf2-41d1-85c1-d82cdd98def1.png)](https://www.youtube.com/watch?v=MPKdfhPeLeE)
+## Grouptelegram
+https://t.me/+BWjrTfGv4Lw2YzI9
 
 ## Usage on Linux
 ```sh
@@ -72,3 +71,4 @@ You must use Python 3.9 or higher.
 ```sh
  Telegram: https://t.me/adfhjktewwyjqk
 ```
+original : https://github.com/HyukIsBack/KARMA-DDoS
