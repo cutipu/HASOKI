@@ -1,9 +1,9 @@
 <p align="center"><img src="https://www.linkpicture.com/q/12311_1.png" width="400px" height="150px" alt="ddos"></p>
-# (DoS) Attack Penetration Testing
+(DoS) Attack Penetration Testing
  <p>
- <img src="https://img.shields.io/github/stars/HyukIsBack/HASOKI-DDoS?color=%23DF0067&style=for-the-badge"/> &nbsp;
- <img src="https://img.shields.io/github/forks/HyukIsBack/HASOKI-DDoS?color=%239999FF&style=for-the-badge"/> &nbsp;
- <img src="https://img.shields.io/github/license/HyukIsBack/HASOKI-DDoS?color=%23E8E8E8&style=for-the-badge"/> &nbsp;
+ <img src="https://img.shields.io/github/stars/cutipu/HASOKI?color=%23DF0067&style=for-the-badge"/> &nbsp;
+ <img src="https://img.shields.io/github/forks/cutipu/HASOKI?color=%239999FF&style=for-the-badge"/> &nbsp;
+ <img src="https://img.shields.io/github/license/cutipu/HASOKI?color=%23E8E8E8&style=for-the-badge"/> &nbsp;
  
 </p>
  DDoS Attack Panel includes CloudFlare Bypass (UAM, CAPTCHA, BFM, etc..)<br/><br/>
