@@ -15,8 +15,6 @@
 
  <img src="https://img.shields.io/badge/Python-FFDD00?style=for-the-badge&logo=python&logoColor=blue"/></br>
 </div>
-## SETUP
-INSTALL: python setup.py install or python3 setup.py install
 ## Menu
 ![hasoki](https://www.linkpicture.com/q/Untitled4_4.png)
 
@@ -58,14 +56,7 @@ https://t.me/+BWjrTfGv4Lw2YzI9
 ## Usage on Linux
 ```sh
 You must use Python 3.9 or higher.
-1. Install python3 modules
- - pip3 install -r requirements.txt
-              OR
- - pip install -r requirements.txt
-
-2. Install chrome ( or update lastest )
-- wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-- apt-get install ./google-chrome-stable_current_amd64.deb
+INSTALL: python setup.py install or python3 setup.py install
 ```
 
 ## Contact Developer
