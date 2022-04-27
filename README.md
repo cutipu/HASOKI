@@ -7,14 +7,16 @@
  
 </p>
  DDoS Attack Panel includes CloudFlare Bypass (UAM, CAPTCHA, BFM, etc..)<br/><br/>
- Don't attack any websites gov !<br/>
-## UPDATE
- News:
+## Update
+
+```sh
 - [x] Added auto download fresh socks5 after attack with method sky and slowloris
 - [x] Added HTTP/2 (HTTPX) method
 - [x] Added bypass method 
 - [x] Change pxcfb to TSL1.3 Proxy Flood 
  
+```
+
 ## Language</br>
 
  <img src="https://img.shields.io/badge/Python-FFDD00?style=for-the-badge&logo=python&logoColor=blue"/></br>
