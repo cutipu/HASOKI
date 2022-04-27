@@ -8,7 +8,11 @@
 </p>
  DDoS Attack Panel includes CloudFlare Bypass (UAM, CAPTCHA, BFM, etc..)<br/><br/>
  Don't attack any websites gov !<br/>
- All responsibilities and disadvantages of using this program is for the user.
+ News:
+- [x] Added auto download fresh socks5 after attack with method sky and slowloris
+- [x] Added HTTP/2 (HTTPX) method
+- [x] Added bypass method 
+- [x] Change pxcfb to TSL1.3 Proxy Flood 
  
 ## Language</br>
 
