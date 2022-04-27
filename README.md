@@ -75,4 +75,4 @@ INSTALL: python setup.py install or python3 setup.py install
  Telegram: https://t.me/adfhjktewwyjqk
  Buy Me a Coffee BTC: 34zoKEUcZ42mKEUc1gB836k9puQ1MiugNr
 ```
-original : https://github.com/HyukIsBack/KARMA-DDoS
+
