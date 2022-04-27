@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
 # From NV with love
 # Hasoki v1.1
+# All for FREE
 from os import system, name
 import httpx
 from httpx import AsyncClient, Headers
 import os, threading, requests, cloudscraper, datetime, time, socket, socks, ssl, random
+from socket import (AF_INET, IP_HDRINCL, IPPROTO_IP, IPPROTO_TCP, IPPROTO_UDP, SOCK_DGRAM,
+                    SOCK_RAW, SOCK_STREAM, TCP_NODELAY, gethostbyname,
+                    gethostname, socket)
 from urllib.parse import urlparse
 from requests.cookies import RequestsCookieJar
 import undetected_chromedriver as webdriver
