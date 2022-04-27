@@ -1,3 +1,4 @@
+<div align=center>
 <p align="center"><img src="https://www.linkpicture.com/q/12311_1.png" width="400px" height="150px" alt="ddos"></p>
  <p>
  <img src="https://img.shields.io/github/stars/cutipu/HASOKI?color=%23DF0067&style=for-the-badge"/> &nbsp;
