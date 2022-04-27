@@ -52,9 +52,9 @@
 ```
 
 ## Grouptelegram
-https://t.me/+BWjrTfGv4Lw2YzI9
+https://t.me/hackingcn
 
-## Usage on Linux
+## Usage
 ```sh
 You must use Python 3.9 or higher.
 INSTALL: python setup.py install or python3 setup.py install
