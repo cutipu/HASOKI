@@ -471,7 +471,7 @@ def LaunchSOC(url, th, t):
     until = datetime.datetime.now() + datetime.timedelta(seconds=int(t))
     m = random.choice(method)
     user_agent = random.choice(useragents)
-    req =  m ++target['uri']+" HTTP/1.1\r\nHost: " + target['host'] + "\r\n"
+    req =  m +target['uri']+" HTTP/1.1\r\nHost: " + target['host'] + "\r\n"
     req += user_agent +"\r\n"
     req += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n'"
     req += "Connection: Keep-Alive\r\n\r\n"
