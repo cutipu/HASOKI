@@ -22,6 +22,7 @@
 
 ```sh
   [Layer 7]
+ - http2 | HTTP/2 attack with proxy
  - cfb   | Bypass CF attack
  - pxcfb | Bypass CF attack with proxy
  - cfpro | Bypass CF UAM(Under Attack Mode), CAPTCHA, BFM(Bot Fight Mode) etc.. (request)
