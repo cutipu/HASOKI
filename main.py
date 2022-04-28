@@ -14,7 +14,6 @@ from requests.cookies import RequestsCookieJar
 import undetected_chromedriver as webdriver
 from sys import stdout
 from colorama import Fore, init
-from urllib.parse import urlparse
 init(convert=True)
 def countdown(t):
     until = datetime.datetime.now() + datetime.timedelta(seconds=int(t))
