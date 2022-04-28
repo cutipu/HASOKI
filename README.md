@@ -10,9 +10,10 @@
 ## Update
 
 ```sh
-- [x] Added auto download fresh socks5 after attack with method sky and slowloris
-- [x] Added HTTP/2 (HTTPX) method
-- [x] Added bypass method 
+- [x] Add auto download fresh socks5 after attack with method sky and slowloris
+- [x] Add HTTP/2 (HTTPX) method
+- [x] Add bypass method 
+- [x] Add spoof method 
 - [x] Change pxcfb to TSL1.3 Proxy Flood 
  
 ```
