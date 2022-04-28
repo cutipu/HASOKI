@@ -6,7 +6,7 @@
  <img src="https://img.shields.io/github/license/cutipu/HASOKI?color=%23E8E8E8&style=for-the-badge"/> &nbsp;
  
 </p>
- DDoS Attack Panel includes CloudFlare Bypass (UAM, CAPTCHA, BFM, etc..)<br/><br/>
+ DDoS Attack Panel includes CloudFlare Bypass (UAM, CAPTCHA, GS ,VS ,BFM, etc..)<br/><br/>
 <p align="center"><img src="https://www.linkpicture.com/q/yasuo-lol-legends-of-runeterra-uhdpaper.com-4K-4.1469-wp.thumbnail.jpg"width="400px" height="200px" alt="ddos"></p>
 </div>
 
@@ -18,9 +18,7 @@
 - [x] Change pxcfb to TSL1.3 Proxy Flood 
  
 ```
-
-## Language</br>
-
+<div align=center>
  <img src="https://img.shields.io/badge/Python-FFDD00?style=for-the-badge&logo=python&logoColor=blue"/></br>
 </div>
 
@@ -48,7 +46,7 @@
  -stellar| HTTPS Sky method without proxies
  - pxraw | Proxy Request Attack
  - pxsoc | Proxy Socket Attack
- - pxslow | Proxy slowloris Attack
+ - pxslow| Proxy slowloris Attack
  
   [Layer 4]
   -udp | simple udp flood
