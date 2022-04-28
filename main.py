@@ -1161,12 +1161,6 @@ def command():
         timer = threading.Thread(target=countdown, args=(t,))
         timer.start()
         timer.join()
-    elif command == "stress":
-        target, thread, t = get_info_l7()
-        threading.Thread(target=attackstress, args=(target, t, thread)).start()
-        timer = threading.Thread(target=countdown, args=(t,))
-        timer.start()
-        timer.join()
     elif command == "http2":
         target, thread, t = get_info_l7()
         threading.Thread(target=attackhttp2, args=(target, t, thread)).start()
