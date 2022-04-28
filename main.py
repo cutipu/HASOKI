@@ -928,7 +928,7 @@ def help():
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"╠═════════════════════════════════════════════════════╣\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"THANK    "+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" Thanks for using HASOKI.               "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"YOU♥     "+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" Plz star project :)                    "+Fore.LIGHTGREEN_EX+"║\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"github   "+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" github.com/HyukIsBack/HASOKI-DDoS       "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"github   "+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" github.com/cutipu/HASOKI          "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"╚═════════════════════════════════════════════════════╝\n")
     stdout.write("\n")
 ##############################################################################################
@@ -943,15 +943,15 @@ def infoattack():
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"╠═════════════════════════════════════════════════════╣\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"THANK    "+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" Thanks for using HASOKI.                "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"YOU♥     "+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" Plz star project :)                    "+Fore.LIGHTGREEN_EX+"║\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"github   "+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" github.com/HyukIsBack/HASOKI-DDoS       "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX+"github   "+Fore.LIGHTGREEN_EX+"|"+Fore.LIGHTWHITE_EX+" github.com/cutipu/HASOKI          "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"╚═════════════════════════════════════════════════════╝\n")
     stdout.write("\n")
 ##############################################################################################
 def credit():
     stdout.write("\x1b[38;2;0;236;250m════════════════════════╗\n")
-    stdout.write("\x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX   +"Developer "+Fore.RED+": \x1b[38;2;0;255;189mHyuk\n")
+    stdout.write("\x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX   +"Developer "+Fore.RED+": \x1b[38;2;0;255;189mcuti\n")
     stdout.write("\x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX   +"UI Design "+Fore.RED+": \x1b[38;2;0;255;189mYone不\n")
-    stdout.write("\x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX   +"Methods/Tools "+Fore.RED+": \x1b[38;2;0;255;189mSkyWtkh\n")
+    stdout.write("\x1b[38;2;255;20;147m• "+Fore.LIGHTWHITE_EX   +"Methods/Tools "+Fore.RED+": \x1b[38;2;0;255;189mcuti   \n")
     stdout.write("\x1b[38;2;0;236;250m════════════════════════╝\n")
     stdout.write("\n")    
 ##############################################################################################
