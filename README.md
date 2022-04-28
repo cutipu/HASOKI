@@ -7,13 +7,15 @@
  
 </p>
  DDoS Attack Panel includes CloudFlare Bypass (UAM, CAPTCHA, BFM, etc..)<br/><br/>
-## Update
+
+ <img src="https://www.linkpicture.com/q/yasuo-lol-legends-of-runeterra-uhdpaper.com-4K-4.1469-wp.thumbnail.jpg"width="400px" height="200px" alt="ddos"></p>
+</div>
 
 ```sh
 - [x] Add auto download fresh socks5 after attack with method sky and slowloris
 - [x] Add HTTP/2 (HTTPX) method
-- [x] Add bypass method 
-- [x] Add spoof method 
+- [x] Add bypass method [STRONG ATTACK]
+- [x] Add spoof method [STRONG ATTACK]
 - [x] Change pxcfb to TSL1.3 Proxy Flood 
  
 ```
