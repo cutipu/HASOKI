@@ -33,6 +33,7 @@
 
 ```sh
   [Layer 7]
+ - spoof | STRONG ATTACK with spoof Header
  - http2 | HTTP/2 attack with proxy [httpx]
  - cfb   | Bypass CF attack
  - pxcfb | Bypass CF attack tsl1.3 with proxy [fixed work]
@@ -60,7 +61,7 @@
  - Geoip      | Geo IP Address Lookup
  - Subnet     | Subnet IP Address Lookup
  
- - Next Update Attack Menu And L4 Methods (SOON...)
+ - Next Update SLOWREAD method (SOON...)
 ```
 
 ## Grouptelegram
