@@ -4,6 +4,7 @@
 # All for FREE
 from os import system, name
 import httpx
+import undetected_chromedriver as webdriver
 from httpx import AsyncClient, Headers
 import os, threading, requests, cloudscraper, datetime, time, socket, socks, ssl, random
 from socket import (AF_INET, IP_HDRINCL, IPPROTO_IP, IPPROTO_TCP, IPPROTO_UDP, SOCK_DGRAM,
