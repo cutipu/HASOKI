@@ -68,8 +68,13 @@ https://t.me/+BWjrTfGv4Lw2YzI9
 
 ## Usage
 ```sh
-You must use Python 3.9 or higher.
-INSTALL: python setup.py install or python3 setup.py install
+Download : 
+You must use Python 3.9 or higher
+DOWNLOAD:  git clone https://github.com/cutipu/HASOKI.git
+INSTALL: - python setup.py install or python3 setup.py install
+         - with pip:
+           pip3 install -r requirements.txt  or  pip install -r requirements.txt
+NOTICE: For bypass work need install lastest verion Chrome
 ```
 
 ## Contact Developer
