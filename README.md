@@ -7,6 +7,7 @@
  
 </p>
  DDoS Attack Panel includes CloudFlare Bypass (UAM, CAPTCHA, GS ,VS ,BFM, etc..)<br/><br/>
+ This is open source code. I am not responsible if you use it for malicious attacks!
 <p align="center"><img src="https://www.linkpicture.com/q/yasuo-lol-legends-of-runeterra-uhdpaper.com-4K-4.1469-wp.thumbnail.jpg"width="400px" height="200px" alt="ddos"></p>
 </div>
 
