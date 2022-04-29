@@ -64,7 +64,7 @@
 ```
 
 ## Grouptelegram
-https://t.me/hackingcn
+https://t.me/+BWjrTfGv4Lw2YzI9
 
 ## Usage
 ```sh
