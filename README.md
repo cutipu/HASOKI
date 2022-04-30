@@ -64,7 +64,7 @@
 ```
 
 ## Grouptelegram
-https://t.me/+BWjrTfGv4Lw2YzI9
+https://t.me/+kL52j7B5AZlmZWI1
 
 ## Usage
 ```sh
