@@ -6,7 +6,7 @@ from os import system, name
 import httpx
 import undetected_chromedriver as webdriver
 from httpx import AsyncClient, Headers
-import os, threading, requests, cloudscraper, datetime, time, socket, socks, ssl, random
+import os, threading, requests, cloudscraper, datetime, time, socket, socks, ssl, random, socket
 from socket import (AF_INET, IP_HDRINCL, IPPROTO_IP, IPPROTO_TCP, IPPROTO_UDP, SOCK_DGRAM,
                     SOCK_RAW, SOCK_STREAM, TCP_NODELAY, gethostbyname,
                     gethostname, socket)
