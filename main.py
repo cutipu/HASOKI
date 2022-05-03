@@ -217,8 +217,7 @@ def get_cookie(url):
     for argument in arguments:
         options.add_argument(argument)
   #      options = webdriver.ChromeOptions('chromedriver.exe')
-    driver = webdriver.Chrome(options=options,executable_path='chromedriver.exe')
- #   driver = webdriver.Chrome(ChromeDriverManager().install())
+     driver = webdriver.Chrome(options=options)
     driver.implicitly_wait(3)
     driver.get(url)
     for _ in range(60):
