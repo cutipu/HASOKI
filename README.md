@@ -25,7 +25,7 @@
 </div>
 
 ## Menu
-![hasoki](https://www.linkpicture.com/q/Untitled1_15.png)
+![hasoki](https://www.linkpicture.com/q/Untitled1_18.png)
 
 ## SKY ATTACK
 ![hasoki](https://www.linkpicture.com/q/Untitled7_1.png)
