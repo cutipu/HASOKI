@@ -76,6 +76,8 @@ INSTALL: - python setup.py install or python3 setup.py install
          - with pip:
            pip3 install -r requirements.txt  or  pip install -r requirements.txt
 NOTICE: For bypass work need install lastest verion Chrome
+ - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+ - apt-get install ./google-chrome-stable_current_amd64.deb
 ```
 
 ## Contact Developer
