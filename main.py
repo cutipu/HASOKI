@@ -2,6 +2,7 @@
 # From NV with love
 # Hasoki v1.1
 # All for FREE
+from socket
 from os import system, name
 import httpx
 import undetected_chromedriver as webdriver
