@@ -18,6 +18,7 @@
 - [x] Add spoof method [STRONG ATTACK]
 - [x] Change pxcfb to TSL1.3 Proxy Flood 
 - [x] Add HULK - HTTP Unbearable Load King
+- [x] Add pxHULK - proxy HTTP Unbearable Load King
  
 ```
 <div align=center>
@@ -45,6 +46,7 @@
  - head  | Head Request Attack
  - soc   | Socket Attack
  - hulk  | HTTP Unbearable Load King
+ - hulk  | proxy hulk HTTP Unbearable Load King
  - sky   | HTTPS Flood and bypass for CF NoSec, DDoS Guard Free and vShield (SOCKS5)
  -stellar| HTTPS Sky method without proxies
  - pxraw | Proxy Request Attack
