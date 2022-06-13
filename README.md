@@ -68,7 +68,7 @@
 ```
 
 ## Grouptelegram
-[https://t.me/rebychx](https://t.me/rebychx)
+[https://t.me/rebychx](https://t.me/+_Q7nHkVa1KJhZWU1)](https://t.me/rebychx)
 
 ## Usage
 ```sh
