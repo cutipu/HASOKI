@@ -766,7 +766,7 @@ def Launchhttp2(url, timer):
             prox1 = list(map(lambda x:x.strip(),open(proxfile1)))
             value = random.randint(65565, 314159)
             proxy1 = random.choice(prox1)
-            proxies = ['http://'+proxy1]
+            proxies = {'http://': 'http://'+prox1}
   #          timeout = httpx.Timeout(None, connect=None)
     #        limits = httpx.Limits(max_keepalive_connections=None, max_connections=None) 
             with httpx.Client(http2=True,proxies=random.choice(proxies),headers=headers,trust_env=False) as client:
