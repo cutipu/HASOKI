@@ -68,9 +68,6 @@
  - Next Update SLOWREAD method (SOON...)
 ```
 
-## Grouptelegram
-[telegram](https://t.me/rebychx)
-
 ## Usage
 ```sh
 You must use Python 3.9 or higher
