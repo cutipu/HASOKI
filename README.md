@@ -79,8 +79,6 @@ NOTICE: For bypass work need install lastest verion Chrome
  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
  - apt-get install ./google-chrome-stable_current_amd64.deb
 ```
-## Grouptelegram
-[telegram](https://t.me/rebychx)
 
 ## Contact Developer
 ```sh
