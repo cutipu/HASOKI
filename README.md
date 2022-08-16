@@ -78,6 +78,7 @@ INSTALL: - python setup.py install or python3 setup.py install
 NOTICE: For bypass work need install lastest verion Chrome
  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
  - apt-get install ./google-chrome-stable_current_amd64.deb
+ Thread set 10-50 > work
 ```
 
 ## Contact Developer
