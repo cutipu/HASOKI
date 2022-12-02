@@ -86,5 +86,6 @@ NOTICE: For bypass work need install lastest verion Chrome
  Buy Me a Coffee BTC: 34zoKEUcZ42mKEUc1gB836k9puQ1MiugNr
  Buy proxy private full : https://proxylist.fun/
  Dev : https://t.me/rebychubx
+ GR: https://t.me/+5u57y9NFUQhhNTBl
 ```
 
