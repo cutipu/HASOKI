@@ -1,5 +1,5 @@
 <div align=center>
-<p align="center"><img src="https://www.linkpicture.com/q/12311_2.png" width="800px" height="200px" alt="ddos"></p>
+<p align="center"><img src="https://www.linkpicture.com/q/hasoki.jpg" width="800px" height="200px" alt="ddos"></p>
  <p>
  <img src="https://img.shields.io/github/stars/cutipu/HASOKI?color=%23DF0067&style=for-the-badge"/> &nbsp;
  <img src="https://img.shields.io/github/forks/cutipu/HASOKI?color=%239999FF&style=for-the-badge"/> &nbsp;
@@ -9,7 +9,7 @@
 </p>
  DDoS Attack Panel includes CloudFlare Bypass (UAM, CAPTCHA, GS ,VS ,BFM, etc..)<br/><br/>
  This is open source code. I am not responsible if you use it for malicious attacks!
-<p align="center"><img src="https://www.linkpicture.com/q/yasuo-lol-legends-of-runeterra-uhdpaper.com-4K-4.1469-wp.thumbnail.jpg"width="400px" height="200px" alt="ddos"></p>
+<p align="center"><img src="https://www.linkpicture.com/q/yaso1.png"width="600px" height="300px" alt="ddos"></p>
 </div>
 
 ```sh
@@ -86,6 +86,5 @@ NOTICE: For bypass work need install lastest verion Chrome
  Buy Me a Coffee BTC: 34zoKEUcZ42mKEUc1gB836k9puQ1MiugNr
  Buy proxy private full : https://proxylist.fun/
  Dev : https://t.me/rebychubx
- GR: https://t.me/+5u57y9NFUQhhNTBl
 ```
 
