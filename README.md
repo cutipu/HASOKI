@@ -81,7 +81,7 @@ NOTICE: For bypass work need install lastest verion Chrome
 ## Contact Developer
 ```sh
  Buy Me a Coffee BTC: 34zoKEUcZ42mKEUc1gB836k9puQ1MiugNr
- Buy proxy private full : https://proxylist.fun/
+ LEAKS https://t.me/hackingleak
  Dev : https://t.me/rebychubx
 ```
 
