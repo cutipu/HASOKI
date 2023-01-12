@@ -9,7 +9,7 @@
 </p>
  DDoS Attack Panel includes CloudFlare Bypass (UAM, CAPTCHA, GS ,VS ,BFM, etc..)<br/><br/>
  This is open source code. I am not responsible if you use it for malicious attacks!
-<p align="center"><img src="https://www.linkpicture.com/q/yaso1.png"width="600px" height="300px" alt="ddos"></p>
+<p align="center"><img src="https://www.linkpicture.com/q/yaso1_1.png"width="600px" height="500px" alt="ddos"></p>
 </div>
 
 ```sh
@@ -28,9 +28,6 @@
 
 ## Menu
 ![hasoki](https://www.linkpicture.com/q/Untitled1_18.png)
-
-## SKY ATTACK
-![hasoki](https://www.linkpicture.com/q/Untitled7_1.png)
 ## Methods
 
 ```sh
