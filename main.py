@@ -872,7 +872,8 @@ def LaunchSKY(url, timer):
             except:
                 s.close()
         except:
-        s.close()
+            s.close()
+
 #sky
 def attackPXHULK(url, timer, threads):
     for i in range(int(threads)):
