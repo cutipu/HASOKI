@@ -21,7 +21,10 @@ def countdown(t):
     while True:
         if (until - datetime.datetime.now()).total_seconds() > 0:
             stdout.flush()
-            stdout.write("\r "+Fore.MAGENTA+"[*]"+Fore.WHITE+" Attack status => " + str((until - datetime.datetime.now()).total_seconds()) + " sec left ")
+            stdout.write("\r "f"""
+╔══════════[Attack time]══════════╗     
+    Time: {str((until - datetime.datetime.now()).total_seconds())}                         
+╚═════════════════════════════════╝""")
         else:
             stdout.flush()
             stdout.write("\r "+Fore.MAGENTA+"[*]"+Fore.WHITE+" Attack Done !                                   \n")
