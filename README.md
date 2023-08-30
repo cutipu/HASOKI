@@ -80,7 +80,7 @@ NOTICE: For bypass work need install lastest verion Chrome
 
 ## Contact Developer
 ```sh
- Buy Me a Coffee BTC: 34zoKEUcZ42mKEUc1gB836k9puQ1MiugNr
+ Buy Me a Coffee BTC: 3MxrJbEjqrQm4DQ71TPs5wSYX3opMjrvVb
  LEAKS https://t.me/hackingleak
  Dev : https://t.me/rebychubx
 ```
