@@ -1,5 +1,4 @@
 <div align=center>
-<p align="center"><img src="https://www.linkpicture.com/q/hasoki.jpg" width="800px" height="200px" alt="ddos"></p>
  <p>
  <img src="https://img.shields.io/github/stars/cutipu/HASOKI?color=%23DF0067&style=for-the-badge"/> &nbsp;
  <img src="https://img.shields.io/github/forks/cutipu/HASOKI?color=%239999FF&style=for-the-badge"/> &nbsp;
@@ -9,7 +8,6 @@
 </p>
  DDoS Attack Panel includes CloudFlare Bypass (UAM, CAPTCHA, GS ,VS ,BFM, etc..)<br/><br/>
  This is open source code. I am not responsible if you use it for malicious attacks!
-<p align="center"><img src="https://www.linkpicture.com/q/yaso1_1.png"width="600px" height="500px" alt="ddos"></p>
 </div>
 
 ```sh
